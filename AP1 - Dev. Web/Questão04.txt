@@ -5,12 +5,12 @@ Em vez de passar essa propriedade por todos os componentes intermediários, pode
 O valor desejado pode assim ser acessado diretamente pelo componente final sem a necessidade de se propagar por toda a árvore. Isso torna o código mais limpo e legível.
 
 Exemplo:
-import React, {createContext, useContext} from 'react';
+import React, {createContext, useContext} from 'react'
 
-const NomeContext = createContext();
+const NomeContext = createContext()
 
 function App() {
-  const nome = 'João';
+  const nome = 'João'
   
   return (
     <Nome.Provider value = {nome}>
@@ -21,17 +21,17 @@ function App() {
 }
 
 function Intermediario() {
-  const nome = useContext(NomeContext);
+  const nome = useContext(NomeContext)
 
   return (
-  <Final nome = {nome} />;
+  <Final nome = {nome} />
   )
 }
 
 function Final({nome}) {
   return (
-  <div> O nome é: {nome} </div>;
+  <div> O nome é: {nome} </div>
   )
 }
 
-export default App;
+export default App
